@@ -1,0 +1,511 @@
+{
+  "cases_total": 20,
+  "expected_findings": 31,
+  "detected_findings": 37,
+  "matched_findings": 20,
+  "processing_errors": 0,
+  "precision": 0.5405405405405406,
+  "recall": 0.6451612903225806,
+  "cases": [
+    {
+      "path": "correct/correct_01_accountant.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_02_business_analyst.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_03_office_manager.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_04_hr_specialist.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_05_legal_assistant.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_01_multiple_violations.docx",
+      "supported_document": true,
+      "expected_count": 4,
+      "detected_count": 4,
+      "matched_count": 4,
+      "missed": [],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_02_vague_salary_and_long_week.docx",
+      "supported_document": true,
+      "expected_count": 4,
+      "detected_count": 3,
+      "matched_count": 3,
+      "missed": [
+        {
+          "chunk_id": "3.2",
+          "article": "136",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_03_probation_leave_and_bank.docx",
+      "supported_document": true,
+      "expected_count": 4,
+      "detected_count": 2,
+      "matched_count": 2,
+      "missed": [
+        {
+          "chunk_id": "3.2",
+          "article": "136",
+          "acceptable_statuses": [
+            "warning",
+            "violation"
+          ]
+        },
+        {
+          "chunk_id": "4.3",
+          "article": "115",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_04_employer_discretion.docx",
+      "supported_document": true,
+      "expected_count": 5,
+      "detected_count": 5,
+      "matched_count": 5,
+      "missed": [],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_05_missing_terms.docx",
+      "supported_document": true,
+      "expected_count": 7,
+      "detected_count": 5,
+      "matched_count": 5,
+      "missed": [
+        {
+          "chunk_id": "3.2",
+          "article": "136",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        },
+        {
+          "chunk_id": "4.1",
+          "article": "91",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_06_procurement_specialist.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 2,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "Обязательными для включения в трудовой договор являются следующие условия: место работы",
+          "comment": "Место работы не указано или оставлено на усмотрение Работодателя. Это обязательное условие трудового договора.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_workplace"
+          ]
+        },
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_07_content_editor.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 1,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_08_quality_analyst.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 1,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "Обязательными для включения в трудовой договор являются следующие условия: место работы",
+          "comment": "Место работы не указано или оставлено на усмотрение Работодателя. Это обязательное условие трудового договора.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_workplace"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_09_client_service.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 1,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "correct/correct_10_logistics_coordinator.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 2,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "Обязательными для включения в трудовой договор являются следующие условия: место работы",
+          "comment": "Место работы не указано или оставлено на усмотрение Работодателя. Это обязательное условие трудового договора.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_workplace"
+          ]
+        },
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_06_flexible_workplace.docx",
+      "supported_document": true,
+      "expected_count": 1,
+      "detected_count": 2,
+      "matched_count": 0,
+      "missed": [
+        {
+          "chunk_id": "1.3",
+          "article": "57",
+          "acceptable_statuses": [
+            "warning"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "Обязательными для включения в трудовой договор являются следующие условия: место работы",
+          "comment": "Место работы не указано или оставлено на усмотрение Работодателя. Это обязательное условие трудового договора.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_workplace"
+          ]
+        },
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_07_compound_schedule.docx",
+      "supported_document": true,
+      "expected_count": 1,
+      "detected_count": 1,
+      "matched_count": 0,
+      "missed": [
+        {
+          "chunk_id": "3.1",
+          "article": "91",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_08_single_settlement.docx",
+      "supported_document": true,
+      "expected_count": 1,
+      "detected_count": 2,
+      "matched_count": 0,
+      "missed": [
+        {
+          "chunk_id": "2.2",
+          "article": "136",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        },
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 100",
+          "contract_quote": "",
+          "law_quote": "Режим рабочего времени должен предусматривать продолжительность рабочей недели",
+          "comment": "Режим работы не определён или может односторонне изменяться Работодателем. Нужно уточнить график или применимые правила внутреннего трудового распорядка.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_unilateral_work_schedule"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_09_salary_grade_probation.docx",
+      "supported_document": true,
+      "expected_count": 2,
+      "detected_count": 3,
+      "matched_count": 1,
+      "missed": [
+        {
+          "chunk_id": "4.1",
+          "article": "70",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "Обязательными для включения в трудовой договор являются следующие условия: место работы",
+          "comment": "Место работы не указано или оставлено на усмотрение Работодателя. Это обязательное условие трудового договора.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_workplace"
+          ]
+        },
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        }
+      ],
+      "processing_errors": []
+    },
+    {
+      "path": "problematic/problematic_10_variable_duties.docx",
+      "supported_document": true,
+      "expected_count": 2,
+      "detected_count": 3,
+      "matched_count": 0,
+      "missed": [
+        {
+          "chunk_id": "1.2",
+          "article": "57",
+          "acceptable_statuses": [
+            "warning"
+          ]
+        },
+        {
+          "chunk_id": "1.3",
+          "article": "57",
+          "acceptable_statuses": [
+            "warning"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "Обязательными для включения в трудовой договор являются следующие условия: место работы",
+          "comment": "Место работы не указано или оставлено на усмотрение Работодателя. Это обязательное условие трудового договора.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_workplace"
+          ]
+        },
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "трудовая функция (работа по должности в соответствии со штатным расписанием, профессии, специальности с указанием квалификации; конкретный вид поручаемой работнику работы)",
+          "comment": "Трудовая функция не определена достаточно конкретно. Нужно указать должность, профессию, специальность или конкретный вид поручаемой работы.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_vague_job_function"
+          ]
+        },
+        {
+          "chunk_id": "document",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 100",
+          "contract_quote": "",
+          "law_quote": "Режим рабочего времени должен предусматривать продолжительность рабочей недели",
+          "comment": "Режим работы не определён или может односторонне изменяться Работодателем. Нужно уточнить график или применимые правила внутреннего трудового распорядка.",
+          "retrieval_score": null,
+          "validation_notes": [
+            "Детерминированное правило всего договора: missing_or_unilateral_work_schedule"
+          ]
+        }
+      ],
+      "processing_errors": []
+    }
+  ]
+}

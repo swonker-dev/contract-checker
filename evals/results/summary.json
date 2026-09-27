@@ -1,0 +1,292 @@
+{
+  "cases_total": 10,
+  "expected_findings": 24,
+  "detected_findings": 28,
+  "matched_findings": 17,
+  "precision": 0.6071428571428571,
+  "recall": 0.7083333333333334,
+  "cases": [
+    {
+      "path": "correct/correct_01_accountant.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": []
+    },
+    {
+      "path": "correct/correct_02_business_analyst.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 2,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": [
+        {
+          "chunk_id": "4",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 91",
+          "contract_quote": "",
+          "law_quote": "",
+          "comment": "Не удалось проверить пункт через LLM: ValidationError",
+          "retrieval_score": 0.33484089374542236,
+          "validation_notes": [
+            "1 validation error for LLMChunkResult\nchunk_id\n  Input should be a valid string [type=string_type, input_value=4, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+          ]
+        },
+        {
+          "chunk_id": "5",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 70",
+          "contract_quote": "",
+          "law_quote": "",
+          "comment": "Не удалось проверить пункт через LLM: ValidationError",
+          "retrieval_score": 0.2654710114002228,
+          "validation_notes": [
+            "1 validation error for LLMChunkResult\nchunk_id\n  Input should be a valid string [type=string_type, input_value=5, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "correct/correct_03_office_manager.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": []
+    },
+    {
+      "path": "correct/correct_04_hr_specialist.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": []
+    },
+    {
+      "path": "correct/correct_05_legal_assistant.docx",
+      "supported_document": true,
+      "expected_count": 0,
+      "detected_count": 0,
+      "matched_count": 0,
+      "missed": [],
+      "unexpected": []
+    },
+    {
+      "path": "problematic/problematic_01_multiple_violations.docx",
+      "supported_document": true,
+      "expected_count": 4,
+      "detected_count": 4,
+      "matched_count": 4,
+      "missed": [],
+      "unexpected": []
+    },
+    {
+      "path": "problematic/problematic_02_vague_salary_and_long_week.docx",
+      "supported_document": true,
+      "expected_count": 4,
+      "detected_count": 7,
+      "matched_count": 2,
+      "missed": [
+        {
+          "chunk_id": "3.1",
+          "article": "57",
+          "acceptable_statuses": [
+            "warning"
+          ]
+        },
+        {
+          "chunk_id": "3.2",
+          "article": "136",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "2",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 91",
+          "contract_quote": "",
+          "law_quote": "",
+          "comment": "Не удалось проверить пункт через LLM: ValidationError",
+          "retrieval_score": 0.22069191932678223,
+          "validation_notes": [
+            "1 validation error for LLMChunkResult\nchunk_id\n  Input should be a valid string [type=string_type, input_value=2, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+          ]
+        },
+        {
+          "chunk_id": "3",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "",
+          "law_quote": "",
+          "comment": "Не удалось проверить пункт через LLM: ValidationError",
+          "retrieval_score": 0.23733657598495483,
+          "validation_notes": [
+            "1 validation error for LLMChunkResult\nchunk_id\n  Input should be a valid string [type=string_type, input_value=3, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+          ]
+        },
+        {
+          "chunk_id": "3.1",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации",
+          "contract_quote": "Оплата труда определяется действующим штатным расписанием Работодателя. Конкретный размер оклада в настоящем договоре не устанавливается.",
+          "law_quote": "Обязательными для включения в трудовой договор являются условия оплаты труда (в том числе размер тарифной ставки или оклада (должностного оклада) работника, доплаты, надбавки и поощрительные выплаты).",
+          "comment": "Пункт договора не устанавливает конкретный размер оклада, что нарушает требование ТК РФ о включении размера оклада в трудовой договор.",
+          "retrieval_score": 0.4559611976146698,
+          "validation_notes": [
+            "Цитата нормы отсутствует в найденных нормативных фрагментах"
+          ]
+        },
+        {
+          "chunk_id": "3.2",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 136",
+          "contract_quote": "Заработная плата перечисляется в последний рабочий день каждого месяца.",
+          "law_quote": "Заработная плата выплачивается не реже чем каждые полмесяца. Конкретная дата выплаты заработной платы устанавливается правилами внутреннего трудового распорядка, коллективным договором или трудовым договором не позднее 15 календарных дней со дня окончания периода, за который она начислена.",
+          "comment": "Пункт договора устанавливает иную дату выплаты зарплаты, отличную от установленных ТК РФ сроков (не реже чем каждые полмесяца). Это может привести к нарушению прав работника.",
+          "retrieval_score": 0.3959537744522095,
+          "validation_notes": []
+        },
+        {
+          "chunk_id": "4.2",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации",
+          "contract_quote": "Рабочая неделя включает пять рабочих дней по десять часов с понедельника по пятницу. Перерыв - один час.",
+          "law_quote": "Статья 91 Трудового кодекса Российской Федерации: Нормальная продолжительность рабочего времени не может превышать 40 часов в неделю.",
+          "comment": "Согласно ТК РФ, нормальная продолжительность рабочего времени не может превышать 40 часов в неделю. Договор устанавливает рабочую неделю продолжительностью 50 часов (5 дней по 10 часов), что является нарушением.",
+          "retrieval_score": 0.38752344250679016,
+          "validation_notes": [
+            "Цитата нормы отсутствует в найденных нормативных фрагментах",
+            "Статус violation понижен до warning из-за недостаточных доказательств"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "problematic/problematic_03_probation_leave_and_bank.docx",
+      "supported_document": true,
+      "expected_count": 4,
+      "detected_count": 4,
+      "matched_count": 3,
+      "missed": [
+        {
+          "chunk_id": "4.3",
+          "article": "115",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "4.3",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации",
+          "contract_quote": "Ежегодный основной оплачиваемый отпуск составляет 21 календарный день.",
+          "law_quote": "Статья 115 ТК РФ: Ежегодный основной оплачиваемый отпуск предоставляется работникам продолжительностью 28 календарных дней.",
+          "comment": "Договор устанавливает продолжительность ежегодного оплачиваемого отпуска меньше установленной законом минимальной продолжительности (28 дней). Это является прямым нарушением трудового законодательства.",
+          "retrieval_score": 0.6359620094299316,
+          "validation_notes": [
+            "Цитата нормы отсутствует в найденных нормативных фрагментах",
+            "Статус violation понижен до warning из-за недостаточных доказательств"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "problematic/problematic_04_employer_discretion.docx",
+      "supported_document": true,
+      "expected_count": 5,
+      "detected_count": 5,
+      "matched_count": 4,
+      "missed": [
+        {
+          "chunk_id": "3.1",
+          "article": "57",
+          "acceptable_statuses": [
+            "warning",
+            "violation"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "3.1",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации",
+          "contract_quote": "Работодатель определяет размер заработной платы по своему усмотрению и вправе изменить его без письменного соглашения с Работником.",
+          "law_quote": "В трудовом договоре могут предусматриваться дополнительные условия, не ухудшающие положение работника...",
+          "comment": "Пункт допускает изменение размера зарплаты без согласия работника, что может ухудшать его положение. Требуется проверка соответствия нормам ТК РФ.",
+          "retrieval_score": 0.5313236117362976,
+          "validation_notes": [
+            "Цитата нормы отсутствует в найденных нормативных фрагментах"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "problematic/problematic_05_missing_terms.docx",
+      "supported_document": true,
+      "expected_count": 7,
+      "detected_count": 6,
+      "matched_count": 4,
+      "missed": [
+        {
+          "chunk_id": "3.1",
+          "article": "57",
+          "acceptable_statuses": [
+            "warning"
+          ]
+        },
+        {
+          "chunk_id": "3.2",
+          "article": "136",
+          "acceptable_statuses": [
+            "violation"
+          ]
+        },
+        {
+          "chunk_id": "4.2",
+          "article": "100",
+          "acceptable_statuses": [
+            "warning"
+          ]
+        }
+      ],
+      "unexpected": [
+        {
+          "chunk_id": "1.1",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации, статья 57",
+          "contract_quote": "Работодатель принимает Работника на должность специалиста в подразделение без указания структурного подразделения.",
+          "law_quote": "Обязательными для включения в трудовой договор являются следующие условия: место работы, а в случае, когда работник принимается для работы в филиале, представительстве или ином обособленном структурном подразделении организации, расположенном в другой местности, - место работы с указанием обособленного структурного подразделения и его местонахождения.",
+          "comment": "Отсутствует указание на конкретное структурное подразделение, что нарушает обязательное требование ТК РФ о включении места работы с указанием структурного подразделения.",
+          "retrieval_score": 0.49413740634918213,
+          "validation_notes": [
+            "Цитата нормы отсутствует в найденных нормативных фрагментах"
+          ]
+        },
+        {
+          "chunk_id": "4.2",
+          "status": "warning",
+          "source": "Трудовой кодекс Российской Федерации",
+          "contract_quote": "Работодатель самостоятельно определяет начало и окончание рабочего дня и может изменить график без уведомления Работника.",
+          "law_quote": "Режим рабочего времени должен предусматривать продолжительность рабочей недели, работу с ненормированным рабочим днем для отдельных категорий работников, продолжительность ежедневной работы, время начала и окончания работы, которые устанавливаются правилами внутреннего трудового распорядка...",
+          "comment": "Пункт договора позволяет работодателю самостоятельно определять начало и окончание рабочего дня без согласования с работником, что противоречит норме ТК РФ, требующей установления режима рабочего времени правилами внутреннего трудового распорядка.",
+          "retrieval_score": 0.48064419627189636,
+          "validation_notes": [
+            "Цитата нормы отсутствует в найденных нормативных фрагментах",
+            "Статус violation понижен до warning из-за недостаточных доказательств"
+          ]
+        }
+      ]
+    }
+  ]
+}
