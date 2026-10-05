@@ -29,6 +29,9 @@ def test_check_page_returns_async_upload_interface() -> None:
     assert response.status_code == 200
     assert 'accept=".docx,.pdf"' in response.text
     assert 'fetch("/api/analyses"' in response.text
+    assert 'id="drop"' in response.text
+    assert "file.size>MAX_FILE_SIZE" in response.text
+    assert 'data-filter="violation"' in response.text
 
 
 def test_document_type_catalog_marks_only_employment_as_enabled() -> None:
@@ -47,6 +50,9 @@ def test_regulations_page_returns_admin_interface() -> None:
     assert response.status_code == 200
     assert "Нормативная база" in response.text
     assert 'request("/api/regulations")' in response.text
+    assert 'id="drop"' in response.text
+    assert 'id="chunks-total"' in response.text
+    assert "file.size>MAX_FILE_SIZE" in response.text
 
 
 def test_analyze_rejects_unsupported_extension() -> None:
