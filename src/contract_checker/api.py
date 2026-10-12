@@ -7,6 +7,7 @@ from pathlib import Path
 
 from fastapi import BackgroundTasks, FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
 from .analysis_store import AnalysisJob, AnalysisStatus, AnalysisStore
 from .bootstrap import get_analyzer, get_analyzer_for_document_type, invalidate_analyzer
@@ -28,6 +29,12 @@ app = FastAPI(
     title="Проверка договоров",
     description="MVP семантической проверки договоров по выбранному профилю",
     version="0.1.0",
+)
+
+app.mount(
+    "/static",
+    StaticFiles(directory=Path(__file__).parent / "static"),
+    name="static",
 )
 
 

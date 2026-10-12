@@ -55,6 +55,19 @@ def test_regulations_page_returns_admin_interface() -> None:
     assert "file.size>MAX_FILE_SIZE" in response.text
 
 
+def test_ui_assets_are_served() -> None:
+    client = TestClient(app)
+    for filename, content_type in (
+        ("ui.css", "text/css"),
+        ("viwork-logo.png", "image/png"),
+        ("InterVariable.woff2", "font/woff2"),
+    ):
+        response = client.get(f"/static/{filename}")
+        assert response.status_code == 200
+        assert response.headers["content-type"].startswith(content_type)
+        assert response.content
+
+
 def test_analyze_rejects_unsupported_extension() -> None:
     response = TestClient(app).post(
         "/analyze",
